@@ -1,0 +1,24 @@
+/* thrown away */
+.fa {
+  content: 'fa';
+}
+
+.fa-address-book-o {
+  content: 'fa';
+}
+
+.fa-save, .fa-floppy {
+  content: 'fa';
+}
+
+.fa-table {
+  content: 'fa';
+}
+
+.fa-other {
+  content: 'foo';
+}
+
+.my-favorite-class {
+  background: blue;
+}
