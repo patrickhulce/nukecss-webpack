@@ -32,7 +32,10 @@ describe('NukeCssPlugin', function () {
     })
   }
 
-  before(done => testWithConfig(baseConfig, done))
+  before(function (done) {
+    this.timeout(10000)
+    testWithConfig(baseConfig, done)
+  })
 
   it('should work with style-loader', function () {
     expect(fileStats['out.js'].content).to.contain('.fa-address-book-o')
