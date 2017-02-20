@@ -13,7 +13,6 @@ before_install:
 before_script:
   - npm prune
 script:
-
   - npm run test:lint
   - npm run test:coverage
 after_success:
