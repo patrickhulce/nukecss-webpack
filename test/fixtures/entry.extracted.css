@@ -1,4 +1,6 @@
 /* thrown away */
+@import "~bootstrap/dist/css/bootstrap.css";
+
 .fa {
   content: 'fa';
 }

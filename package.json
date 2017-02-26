@@ -44,10 +44,12 @@
     "webpack-sources": "^0.1.4"
   },
   "devDependencies": {
+    "bootstrap": "^3.3.7",
     "chai": "^3.5.0",
     "css-loader": "^0.26.1",
     "cz-conventional-changelog": "^1.2.0",
     "extract-text-webpack-plugin": "v2.0.0-rc.3",
+    "file-loader": "^0.10.1",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
     "rimraf": "^2.6.0",

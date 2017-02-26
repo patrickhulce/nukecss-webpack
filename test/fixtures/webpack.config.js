@@ -6,6 +6,7 @@ module.exports = {
   output: {filename: 'out.js', path: `${__dirname}/dist`},
   module: {
     rules: [
+      {test: /\.(svg|eot|woff2?|ttf)/, use: 'file-loader'},
       {test: /\.extracted.css$/, use: ExtractTextPlugin.extract({
         use: ['css-loader']
       }), include: __dirname},
