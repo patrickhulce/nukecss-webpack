@@ -5,4 +5,36 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Dependencies](https://david-dm.org/patrickhulce/nukecss-webpack.svg)](https://david-dm.org/patrickhulce/nukecss-webpack)
 
-Eliminates unused css from your webpack bundle.
+Uses [nukecss](https://github.com/patrickhulce/nukecss) to eliminate unused css from your webpack bundle. Support for the `extract-text-webpack-plugin` and *partial support* for `style-loader`.
+
+## Usage
+
+#### Install nukecss-webpack
+`npm install --save-dev nukecss-webpack`
+
+#### Setup Your Webpack Configuration
+```js
+const NukeCssPlugin = require('nukecss-webpack')
+
+module.exports = {
+  entry: 'my-entry.js',
+  output: {
+    // ...
+  },
+  plugins: [
+    // ...
+    new NukecssPlugin()
+  ],
+}
+```
+
+#### Save Bytes
+**Before**
+```
+out.css   146 kB       0  [emitted]  main
+```
+
+**After**
+```
+out.css  6.82 kB       0  [emitted]  main
+```
