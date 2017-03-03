@@ -1,8 +1,16 @@
-/* thrown away */
+/* thrown away comment */
 @import "~bootstrap/dist/css/bootstrap.css";
 
 .fa {
   content: 'fa';
+}
+
+.my-favorite-class {
+  background: blue;
+}
+
+.fa-other {
+  content: 'foo';
 }
 
 .fa-address-book-o {
@@ -15,12 +23,4 @@
 
 .fa-table {
   content: 'fa';
-}
-
-.fa-other {
-  content: 'foo';
-}
-
-.my-favorite-class {
-  background: blue;
 }

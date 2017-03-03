@@ -1,6 +1,7 @@
 const fs = require('fs')
 const _ = require('lodash')
 const webpack = require('webpack')
+const SourceMapConsumer = require('source-map').SourceMapConsumer
 
 describe('NukeCssPlugin', function () {
   let fileStats
@@ -14,7 +15,7 @@ describe('NukeCssPlugin', function () {
         return {
           filename,
           stats: fs.statSync(fullPath),
-          content: fs.readFileSync(fullPath, 'utf8'),
+          content: /\.(css|js)/.test(filename) && fs.readFileSync(fullPath, 'utf8'),
         }
       })
       .keyBy('filename')
@@ -32,6 +33,17 @@ describe('NukeCssPlugin', function () {
     })
   }
 
+  function findLineAndColumn(css, string) {
+    const lines = css.split('\n')
+    const line = lines.findIndex(l => l.includes(string)) + 1
+    if (line === -1) {
+      throw new Error(`could not find string ${string}`)
+    }
+
+    const column = lines[line - 1].indexOf(string) + 1
+    return {line, column}
+  }
+
   before(function (done) {
     this.timeout(10000)
     testWithConfig(baseConfig, done)
@@ -45,5 +57,16 @@ describe('NukeCssPlugin', function () {
   it('should work with ExtractTextPlugin', function () {
     expect(fileStats['out.css'].content).to.contain('.fa-address-book-o')
     expect(fileStats['out.css'].content).to.not.contain('.my-favorite-class')
+  })
+
+  it('should generate a source map', function () {
+    expect(fileStats).to.have.property('out.css.map')
+
+    const newContent = fileStats['out.css'].content
+    const newLocation = findLineAndColumn(newContent, '.fa-table {')
+    const consumer = new SourceMapConsumer(fileStats['out.css.map'].content)
+    const oldLocation = consumer.originalPositionFor(newLocation)
+    expect(oldLocation).to.have.property('source').that.include('entry.extracted.css')
+    expect(oldLocation).to.have.property('line', 24)
   })
 })
