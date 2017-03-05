@@ -69,4 +69,8 @@ describe('NukeCssPlugin', function () {
     expect(oldLocation).to.have.property('source').that.include('entry.extracted.css')
     expect(oldLocation).to.have.property('line', 24)
   })
+
+  it('should not use blacklisted sources', function () {
+    expect(fileStats['out.css'].content).to.not.contain('.fa-blacklisted')
+  })
 })

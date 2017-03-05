@@ -1,0 +1,1 @@
+const content = 'fa-blacklisted'

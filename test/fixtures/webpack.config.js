@@ -17,7 +17,10 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('out.css'),
-    new NukeCssPlugin({sourceMap: true}),
+    new NukeCssPlugin({
+      sourceMap: true,
+      sourceBlacklist: ['blacklisted.js', 'webpack/bootstrap', 'style-loader/addStyles.js']
+    }),
     new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
   ]
 }

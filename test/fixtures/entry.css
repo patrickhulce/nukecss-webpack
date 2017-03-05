@@ -22,3 +22,7 @@
 .my-favorite-class {
   background: blue;
 }
+
+.fa-blacklisted {
+  content: 'fa';
+}
