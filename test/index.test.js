@@ -72,5 +72,7 @@ describe('NukeCssPlugin', function () {
 
   it('should not use blacklisted sources', function () {
     expect(fileStats['out.css'].content).to.not.contain('.fa-blacklisted')
+    expect(fileStats['out.css'].content).to.not.contain('.media') // from css-base
+    expect(fileStats['out.css'].content).to.not.contain('a:hover') // from webpack/bootstrap
   })
 })

@@ -25,6 +25,14 @@
   content: 'fa';
 }
 
+.media {
+  content: 'fa';
+}
+
+a:hover {
+  color: white;
+}
+
 .fa-blacklisted {
   content: 'fa';
 }
