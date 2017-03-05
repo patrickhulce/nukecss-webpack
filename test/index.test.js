@@ -49,7 +49,7 @@ describe('NukeCssPlugin', function () {
     testWithConfig(baseConfig, done)
   })
 
-  it.skip('should work with style-loader', function () {
+  it('should work with style-loader', function () {
     expect(fileStats['out.js'].content).to.contain('.fa-address-book-o')
     expect(fileStats['out.js'].content).to.not.contain('.my-favorite-class')
   })
