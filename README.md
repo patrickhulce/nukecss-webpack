@@ -5,7 +5,7 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Dependencies](https://david-dm.org/patrickhulce/nukecss-webpack.svg)](https://david-dm.org/patrickhulce/nukecss-webpack)
 
-Uses [nukecss](https://github.com/patrickhulce/nukecss) to eliminate unused css from your webpack bundle. Support for the `extract-text-webpack-plugin` and *partial support* for `style-loader`.
+Uses [nukecss](https://github.com/patrickhulce/nukecss) to eliminate unused css from your webpack bundle. Support for the `extract-text-webpack-plugin` and for `style-loader`.
 
 ## Usage
 
