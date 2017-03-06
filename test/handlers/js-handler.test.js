@@ -30,6 +30,11 @@ describe('handlers/js-handler.js', () => {
       expect(result).to.have.deep.property('1.replacement', 'myfunc(1)')
       expect(result).to.have.deep.property('2.content', ')')
     })
+
+    it('should fail on unexpected input', () => {
+      const ast = getExpression(`'foo' + [1,2,3]`)
+      expect(() => JsHandler.collectCssParts(ast)).to.throw()
+    })
   })
 
   describe('#collectCss', () => {
@@ -117,6 +122,14 @@ describe('handlers/js-handler.js', () => {
       const result = JsHandler.computeReplacementJs(cssA + cssB, replacements)
       expect(result).to.contain('url("+foo(1)+");')
       expect(result).to.contain('link("+foobar(1)+");')
+    })
+
+    it('should fail with more than one identical placeholder', () => {
+      const cssA = '.my-class { background: url(__placeholder__); }\n'
+      const cssB = '.my-class2 { background: url(__placeholder__); }\n'
+      const replacements = [{content: '__placeholder__', replacement: 'foo(1)'}]
+      const func = () => JsHandler.computeReplacementJs(cssA + cssB, replacements)
+      expect(func).to.throw()
     })
   })
 
