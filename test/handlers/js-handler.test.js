@@ -134,9 +134,8 @@ describe('handlers/js-handler.js', () => {
 
     it('should use the provided replace function', () => {
       const replace = sinon.stub().returns('foobar')
-      const result = JsHandler.replaceCss(moduleCode, replace)
-      expect(replace).to.have.been.calledOnce
-      const originalCss = replace.firstCall.args[0]
+      JsHandler.replaceCss(moduleCode, replace)
+      const originalCss = _.get(replace, 'firstCall.args.0')
       expect(originalCss).to.eql('.fa {\n  background: url(___nukecss_replacement_value1___);\n}\n')
     })
 
