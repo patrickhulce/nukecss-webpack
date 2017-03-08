@@ -18,6 +18,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('out.css'),
     new NukeCssPlugin({
+      sources: [`file://${__dirname}/*.html`],
       sourceMap: true,
       sourceBlacklist: ['blacklisted.js']
     }),

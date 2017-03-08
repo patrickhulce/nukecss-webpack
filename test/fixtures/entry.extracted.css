@@ -36,3 +36,11 @@ a:hover {
 .fa-blacklisted {
   content: 'fa';
 }
+
+.html-found {
+  color: white;
+}
+
+.html-ignored {
+  color: white;
+}

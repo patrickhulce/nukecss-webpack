@@ -75,4 +75,9 @@ describe('NukeCssPlugin', function () {
     expect(fileStats['out.css'].content).to.not.contain('.media') // from css-base
     expect(fileStats['out.css'].content).to.not.contain('a:hover') // from webpack/bootstrap
   })
+
+  it('should use sources specified in options', function () {
+    expect(fileStats['out.css'].content).to.contain('.html-found')
+    expect(fileStats['out.css'].content).to.not.contain('.html-ignored')
+  })
 })
