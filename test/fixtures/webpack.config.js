@@ -13,6 +13,7 @@ module.exports = {
         use: ['css-loader?sourceMap']
       }), include: __dirname},
       {test: /\.css$/, exclude: /.extracted.css/, use: ['style-loader', 'css-loader'], include: __dirname},
+      {test: /\.js$/, use: 'babel-loader', include: __dirname},
     ],
   },
   plugins: [
