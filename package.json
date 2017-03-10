@@ -22,6 +22,14 @@
   "bugs": {
     "url": "https://github.com/patrickhulce/nukecss-webpack/issues"
   },
+  "keywords": [
+    "webpack",
+    "remove",
+    "unused",
+    "css",
+    "optimize",
+    "selectors"
+  ],
   "homepage": "https://github.com/patrickhulce/nukecss-webpack#readme",
   "xo": {
     "env": [
