@@ -3,7 +3,7 @@ const _ = require('lodash')
 const webpack = require('webpack')
 const SourceMapConsumer = require('source-map').SourceMapConsumer
 
-describe('NukeCssPlugin', function () {
+describe('NukeCssPlugin', () => {
   let fileStats
   const baseConfig = require('./fixtures/webpack.config.js')
 
@@ -49,17 +49,17 @@ describe('NukeCssPlugin', function () {
     testWithConfig(baseConfig, done)
   })
 
-  it('should work with style-loader', function () {
+  it('should work with style-loader', () => {
     expect(fileStats['out.js'].content).to.contain('.fa-address-book-o')
     expect(fileStats['out.js'].content).to.not.contain('.my-favorite-class')
   })
 
-  it('should work with ExtractTextPlugin', function () {
+  it('should work with ExtractTextPlugin', () => {
     expect(fileStats['out.css'].content).to.contain('.fa-address-book-o')
     expect(fileStats['out.css'].content).to.not.contain('.my-favorite-class')
   })
 
-  it('should generate a source map', function () {
+  it('should generate a source map', () => {
     expect(fileStats).to.have.property('out.css.map')
 
     const newContent = fileStats['out.css'].content
@@ -70,13 +70,13 @@ describe('NukeCssPlugin', function () {
     expect(oldLocation).to.have.property('line', 24)
   })
 
-  it('should not use blacklisted sources', function () {
+  it('should not use blacklisted sources', () => {
     expect(fileStats['out.css'].content).to.not.contain('.fa-blacklisted')
     expect(fileStats['out.css'].content).to.not.contain('.media') // from css-base
     expect(fileStats['out.css'].content).to.not.contain('a:hover') // from webpack/bootstrap
   })
 
-  it('should use sources specified in options', function () {
+  it('should use sources specified in options', () => {
     expect(fileStats['out.css'].content).to.contain('.html-found')
     expect(fileStats['out.css'].content).to.not.contain('.html-ignored')
   })

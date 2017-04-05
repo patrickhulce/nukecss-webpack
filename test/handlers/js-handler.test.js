@@ -136,7 +136,8 @@ describe('handlers/js-handler.js', () => {
   describe('#replaceCss', () => {
     const fixturePath = `${__dirname}/fixtures`
     const moduleCode = fs.readFileSync(`${fixturePath}/module.source.js`, 'utf8')
-    const expectedTemplate = _.template(fs.readFileSync(`${fixturePath}/module.expected.ejs`, 'utf8'))
+    const expectedFile = fs.readFileSync(`${fixturePath}/module.expected.ejs`, 'utf8')
+    const expectedTemplate = _.template(expectedFile)
 
     it('should replace only the CSS', () => {
       const replace = sinon.stub().returns('foobar')
