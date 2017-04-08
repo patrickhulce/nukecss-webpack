@@ -1,5 +1,5 @@
 const data = require('./entry.css')
-require('./entry.extracted.css')
+const data2 = require('./entry.extracted.css')
 const myIcons = {
   'fa-address-book-o': true,
   'fa': true,
@@ -7,4 +7,4 @@ const myIcons = {
   'fa-table': true,
 }
 
-console.log(data, myIcons)
+console.log(data, data2, myIcons)

@@ -44,3 +44,7 @@ a:hover {
 .html-ignored {
   color: white;
 }
+
+:local .my-other-local-class :global .fa-table {
+  content: 'locally scoped';
+}

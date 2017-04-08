@@ -36,7 +36,7 @@ describe('NukeCssPlugin', () => {
   function findLineAndColumn(css, string) {
     const lines = css.split('\n')
     const line = lines.findIndex(l => l.includes(string)) + 1
-    if (line === -1) {
+    if (line === -1 || !lines[line - 1]) {
       throw new Error(`could not find string ${string}`)
     }
 
@@ -57,6 +57,11 @@ describe('NukeCssPlugin', () => {
   it('should work with ExtractTextPlugin', () => {
     expect(fileStats['out.css'].content).to.contain('.fa-address-book-o')
     expect(fileStats['out.css'].content).to.not.contain('.my-favorite-class')
+  })
+
+  it('should work with locally scoped', () => {
+    expect(fileStats['out.js'].content).to.contain('locally scoped')
+    expect(fileStats['out.css'].content).to.contain('locally scoped')
   })
 
   it('should generate a source map', () => {
