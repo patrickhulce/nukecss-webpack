@@ -29,6 +29,10 @@
   content: 'fa';
 }
 
+.non-whitelisted {
+  content: 'fa';
+}
+
 :local .my-local-class :global .fa-table {
   content: 'locally scoped';
 }

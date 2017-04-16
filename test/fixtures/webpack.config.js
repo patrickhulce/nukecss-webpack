@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   devtool: 'source-map',
-  entry: `${__dirname}/entry.js`,
+  entry: `${__dirname}/whitelisted/entry.js`,
   output: {filename: 'out.js', path: `${__dirname}/dist`},
   module: {
     rules: [
@@ -21,7 +21,8 @@ module.exports = {
     new NukeCssPlugin({
       sources: [`file://${__dirname}/*.html`],
       sourceMap: true,
-      sourceBlacklist: ['blacklisted.js']
+      sourceWhitelist: ['whitelisted/'],
+      sourceBlacklist: ['blacklisted.js'],
     }),
     new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
   ]

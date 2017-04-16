@@ -75,6 +75,10 @@ describe('NukeCssPlugin', () => {
     expect(oldLocation).to.have.property('line', 24)
   })
 
+  it('should not use non-whitelisted sources', () => {
+    expect(fileStats['out.css'].content).to.not.contain('.non-whitelisted')
+  })
+
   it('should not use blacklisted sources', () => {
     expect(fileStats['out.css'].content).to.not.contain('.fa-blacklisted')
     expect(fileStats['out.css'].content).to.not.contain('.media') // from css-base

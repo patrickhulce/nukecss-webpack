@@ -37,6 +37,10 @@ a:hover {
   content: 'fa';
 }
 
+.non-whitelisted {
+  content: 'fa';
+}
+
 .html-found {
   color: white;
 }
