@@ -76,7 +76,7 @@ describe('NukeCssPlugin', () => {
   })
 
   it('should not use non-whitelisted sources', () => {
-    expect(fileStats['out.css'].content).to.not.contain('.non-whitelisted')
+    expect(fileStats['out.css'].content).to.not.contain('.whitelist-check')
   })
 
   it('should not use blacklisted sources', () => {

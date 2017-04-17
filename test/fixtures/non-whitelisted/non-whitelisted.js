@@ -1,1 +1,0 @@
-const content = 'non-whitelisted'

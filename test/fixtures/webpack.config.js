@@ -21,7 +21,7 @@ module.exports = {
     new NukeCssPlugin({
       sources: [`file://${__dirname}/*.html`],
       sourceMap: true,
-      sourceWhitelist: ['whitelisted/'],
+      sourceWhitelist: ['/whitelisted/'],
       sourceBlacklist: ['blacklisted.js'],
       nukecssOptions: {
         whitelist: ['unused-but-whitelisted']

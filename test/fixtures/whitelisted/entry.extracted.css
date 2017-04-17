@@ -37,7 +37,7 @@ a:hover {
   content: 'fa';
 }
 
-.non-whitelisted {
+.whitelist-check {
   content: 'fa';
 }
 
