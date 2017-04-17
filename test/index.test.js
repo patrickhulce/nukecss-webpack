@@ -89,4 +89,8 @@ describe('NukeCssPlugin', () => {
     expect(fileStats['out.css'].content).to.contain('.html-found')
     expect(fileStats['out.css'].content).to.not.contain('.html-ignored')
   })
+
+  it('should use nukecss options specified', () => {
+    expect(fileStats['out.css'].content).to.contain('.unused-but-whitelisted')
+  })
 })

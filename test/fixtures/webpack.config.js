@@ -23,6 +23,9 @@ module.exports = {
       sourceMap: true,
       sourceWhitelist: ['whitelisted/'],
       sourceBlacklist: ['blacklisted.js'],
+      nukecssOptions: {
+        whitelist: ['unused-but-whitelisted']
+      }
     }),
     new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
   ]

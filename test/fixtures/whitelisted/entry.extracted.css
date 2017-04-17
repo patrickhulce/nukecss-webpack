@@ -41,6 +41,10 @@ a:hover {
   content: 'fa';
 }
 
+.unused-but-whitelisted {
+  content: 'fa';
+}
+
 .html-found {
   color: white;
 }
