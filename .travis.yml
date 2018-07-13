@@ -6,7 +6,6 @@ notifications:
   email: false
 node_js:
   - v8
-  - v6
 before_install:
   - npm install -g coveralls @patrickhulce/scripts nyc
 script:
