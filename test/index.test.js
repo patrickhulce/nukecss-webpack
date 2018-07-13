@@ -44,7 +44,7 @@ describe('NukeCssPlugin', () => {
     return {line, column}
   }
 
-  before(function (done) {
+  before(function(done) {
     this.timeout(10000)
     testWithConfig(baseConfig, done)
   })
@@ -54,7 +54,7 @@ describe('NukeCssPlugin', () => {
     expect(fileStats['out.js'].content).to.not.contain('.my-favorite-class')
   })
 
-  it('should work with ExtractTextPlugin', () => {
+  it('should work with MiniCssExtractPlugin', () => {
     expect(fileStats['out.css'].content).to.contain('.fa-address-book-o')
     expect(fileStats['out.css'].content).to.not.contain('.my-favorite-class')
   })
@@ -71,7 +71,9 @@ describe('NukeCssPlugin', () => {
     const newLocation = findLineAndColumn(newContent, '.fa-table {')
     const consumer = new SourceMapConsumer(fileStats['out.css.map'].content)
     const oldLocation = consumer.originalPositionFor(newLocation)
-    expect(oldLocation).to.have.property('source').that.include('entry.extracted.css')
+    expect(oldLocation)
+      .to.have.property('source')
+      .that.include('entry.extracted.css')
     expect(oldLocation).to.have.property('line', 24)
   })
 
