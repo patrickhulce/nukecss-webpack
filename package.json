@@ -10,8 +10,7 @@
     "test:unit": "mocha --reporter spec --require test/bootstrap 'test/**/*.test.js'",
     "test:lint": "lint",
     "test:coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --require test/bootstrap 'test/**/*.test.js'",
-    "test:watch": "mocha --watch --reporter dot --require test/bootstrap 'test/**/*.test.js'",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "test:watch": "mocha --watch --reporter dot --require test/bootstrap 'test/**/*.test.js'"
   },
   "repository": {
     "type": "git",
@@ -54,7 +53,6 @@
     "mini-css-extract-plugin": "^0.4.1",
     "mocha": "^3.2.0",
     "rimraf": "^2.6.0",
-    "semantic-release": "^6.3.2",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
     "source-map": "^0.5.6",
