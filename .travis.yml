@@ -8,10 +8,10 @@ node_js:
   - v8
   - v6
 before_install:
-  - npm install -g coveralls @patrickhulce/scripts
+  - npm install -g coveralls @patrickhulce/scripts nyc
 script:
   - npm run test:lint
-  - npm run test:coverage
+  - nyc npm run test:unit
 after_success:
-  - cat ./coverage/lcov.info | coveralls || echo 'Failed to upload to coveralls...'
+  - nyc report --reporter=lcov | coveralls || echo 'Failed to upload to coveralls...'
   - hulk npm-publish --yes
