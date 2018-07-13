@@ -30,11 +30,6 @@
     "selectors"
   ],
   "homepage": "https://github.com/patrickhulce/nukecss-webpack#readme",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
   "dependencies": {
     "debug": "^2.6.1",
     "esprima": "^4.0.1",
@@ -50,7 +45,6 @@
     "bootstrap": "^3.3.7",
     "chai": "^3.5.0",
     "css-loader": "^1.0.0",
-    "cz-conventional-changelog": "^1.2.0",
     "file-loader": "^1.1.11",
     "istanbul": "^0.4.5",
     "mini-css-extract-plugin": "^0.4.1",
