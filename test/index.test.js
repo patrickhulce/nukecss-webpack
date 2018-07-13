@@ -44,7 +44,7 @@ describe('NukeCssPlugin', () => {
     return {line, column}
   }
 
-  before(function(done) {
+  before(function (done) {
     this.timeout(10000)
     testWithConfig(baseConfig, done)
   })
