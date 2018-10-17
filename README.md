@@ -32,7 +32,7 @@ module.exports = {
   },
   plugins: [
     // ...
-    new NukecssPlugin()
+    new NukeCssPlugin()
   ],
 }
 ````
